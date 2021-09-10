@@ -3,7 +3,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 val compileKotlin: KotlinCompile by tasks
 compileKotlin.kotlinOptions { jvmTarget = "1.8" }
 
-val outputName = "DopeLib"
+val outputName = "DopeLibAPI"
 val outputDir = "OUTPUT"
 
 group = "com.github.xIrinaShaykx"
@@ -23,7 +23,6 @@ tasks.jar {
     archiveFileName.set("$outputName.jar")
     destinationDirectory.set(file("../OUTPUT"))
     //Shade dependecies
-
 
     configurations.compileClasspath.get().filter {
         it.name.startsWith("SpigotLibrary") || it.name.startsWith("KotlinLibrary") || it.name.startsWith("kotlin") || it.name.startsWith("h2")
